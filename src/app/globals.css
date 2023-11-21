@@ -18,10 +18,36 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow: hidden;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Include the custom scrollbar styles */
+/* You might need to include these styles outside the @screen directive in Tailwind v3+ */
+@layer components {
+  /* Width of the scrollbar */
+  .scrollbar-w-2::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track (the area on which the thumb rests) */
+  .scrollbar-track-gray-200::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle (the draggable scrolling element) */
+  .scrollbar-thumb-gray-500::-webkit-scrollbar-thumb {
+    background: #888;
+    /* border-radius: 5px; */
+  }
+
+  /* Handle on hover */
+  .scrollbar-thumb-gray-500::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
